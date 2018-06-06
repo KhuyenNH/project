@@ -5,12 +5,12 @@
         @content;
     }
 }
-@mixin mqLg-min {
+@mixin mqLgm {
     @media only screen and (min-width: $widthLg + px) {
         @content;
     }
 }
-@mixin mqMd-min {
+@mixin mqMdm {
     @media only screen and (min-width: $widthMd + px) {
         @content;
     }
@@ -34,10 +34,9 @@
 
 @mixin fontSize($sizeValue, $type: pc) {
     @if $type == 'pc' {
-        font-size: ($sizeValue * 10) + px;
-        font-size: ($sizeValue * 1) + rem;
-    } @else
-    if $type == 'sp' {
+        // font-size: ($sizeValue * 10) + px;
+        font-size: $sizeValue + rem;
+    } @else if $type == 'sp' {
         font-size: $sizeValue * 10px;
         font-size: get_vw($sizeValue);
     }
